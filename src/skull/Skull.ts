@@ -29,11 +29,11 @@ export class Skull implements Experience {
 
   update() {
     this.player.update()
-    window.onkeydown = window.onkeyup = this.inputHandler.bind(this)
+    // window.onkeydown = window.onkeyup = this.inputHandler.bind(this)
   }
 
-  inputHandler(e: KeyboardEvent) {
-    e.preventDefault()
-    keys[e.key] = e.type == 'keydown'
-  }
+  // inputHandler(e: KeyboardEvent) {
+  //   e.preventDefault()
+  //   keys[e.key] = e.type == 'keydown'
+  // }
 }

@@ -23,16 +23,13 @@ export class Player extends THREE.Sprite implements GameEntity {
       map: skullTexture,
       color: 0xffffff,
     })
-
-    // const sprite = new THREE.Sprite(material)
-    // sprite.center.set(0, 1)
-    // sprite.position.set(0, 0, -40)
-    // sprite.scale.set(64, 64, 1.0)
-
-    // this.material = material
   }
 
   update() {
+    this.handleInput()
+  }
+
+  handleInput() {
     if (keys['w']) {
       this.position.y += 0.01
     }

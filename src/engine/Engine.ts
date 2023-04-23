@@ -9,6 +9,7 @@ import { InfoConfig, InfoUI } from './interface/InfoUI'
 import { Experience, ExperienceConstructor } from './Experience'
 import { Loader } from './interface/Loader'
 import { Raycaster } from './Raycaster'
+import { keys } from './utilities/Keys'
 
 export class Engine {
   public readonly camera!: Camera
@@ -58,6 +59,10 @@ export class Engine {
     this.resources.on('progress', (progress: number) => {
       this.loader.setProgress(progress)
     })
+
+    document.onkeydown = document.onkeyup = (event) => {
+      keys[event.key] = event.type === 'keydown'
+    }
   }
 
   update(delta: number) {
